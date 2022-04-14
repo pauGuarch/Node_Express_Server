@@ -1,0 +1,50 @@
+
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "password":"man$Super3"
+}
+####
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "password":"man$Super3"
+}
+####
+
+POST http://localhost:3000/users/grants
+Content-Type: application/json
+
+{
+"username":"spyder@dominio.es", "grants":["create_database","create_role","create_table","create_view"]
+}
+
+####
+GET http://localhost:3000/users/aquaman@dominio.es
+
+###
+DELETE http://localhost:3000/users/grants
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "grants":["create_database"]
+}
+
+####
+DELETE http://localhost:3000/users/grants
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "grants":["create_database","create_table"]
+}
+
+####
+PUT http://localhost:3000/users/grants
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "grants":["create_user","alter_table"]
+}

@@ -1,0 +1,17 @@
+// Una contraseña que contiene al menos 1 mayúscula, 1 minúscula, 1 dígito, 1 carácter especial
+// y tiene una longitud de al menos 10
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+"username":"thor@dominio.es", "password":"Go1&567890"
+}
+####
+
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+"username":"thor@dominio.es", "password":"1234567890"
+}
+####

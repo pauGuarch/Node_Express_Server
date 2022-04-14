@@ -1,0 +1,77 @@
+GET http://localhost:3000/actor
+####
+GET http://localhost:3000/movies/2
+####
+GET http://localhost:3000/movies/20
+####
+DELETE  http://localhost:3000/movies/2
+###
+GET http://localhost:3000/movies/
+
+######
+PUT http://localhost:3000/movies/update
+Content-Type: application/json
+
+{
+    "id": 3,
+    "title": "El padrino parte II",
+    "genres": [
+        "Crime", "Drama"
+    ],
+    "year": 1994,
+    "director": "Frank Darabont",
+    "actors": [
+        "Tim Robbins",
+        "Ricard el profe",
+        "Bob Gunton",
+        "William Sadler",
+        "Clancy Brown",
+        "Gil Bellows"
+    ]
+}
+
+######
+POST http://localhost:3000/movies/search
+Content-Type: application/json
+
+{ 
+    "key": "year",
+    "value": 1994 
+}
+
+####
+POST http://localhost:3000/movies/searchActor
+Content-Type: application/json
+
+{ 
+  "value": "Robert Duvall"
+}
+
+######
+PUT http://localhost:3000/movies/add
+Content-Type: application/json
+
+{
+    "id": 10,
+    "title": "Dances with Wolves",
+    "genres": [
+        "Adventure", "Western ", "Drama"
+    ],
+    "year": 1990,
+    "director": "Kevin Costner",
+    "actors": [
+        "Kevin Costner",
+        "Mary McDonnell",
+        "Graham Greene",
+        "Rodney A. Grant"
+    ]
+}
+
+######
+PUT http://localhost:3000/movies/addActor
+Content-Type: application/json
+
+{
+  "id": 4,
+  "value": "Ricard el profe" 
+}

@@ -1,0 +1,156 @@
+///-------------"Register & Login"-------------------
+POST http://localhost:3000/users/register 
+Content-Type: application/json
+
+{
+"username":"spyder@dominio.es", "password":"man$Super1"
+}
+####
+POST http://localhost:3000/users/user
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es"
+}
+
+####
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "password":"man$Super1"
+}
+
+///-------------"Register & Login aquaman"-------------------
+###
+POST http://localhost:3000/users/register 
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "password":"man$Super1"
+}
+#####
+POST http://localhost:3000/users/profiledata
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "profiledata":{
+    "city":"Barcelona",
+    "region":"Barcelona",
+    "zip":"08032"
+    }
+}
+
+
+####
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "password":"man$Super1"
+}
+
+
+####
+GET http://localhost:3000/users/hulk@dominio.es
+
+
+///-------------"ERROR": "Error en los parámetros de entrada"-------------------
+####
+POST http://localhost:3000/users/getfulluser
+Content-Type: application/json
+
+{
+"username":"spyder@dominio.es"
+}
+
+####
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+"username":"spyder@dominio.es"
+}
+####
+POST http://localhost:3000/users/register 
+Content-Type: application/json
+
+{
+"username":"hawkeye@dominio.es", "password":"man$Super1"
+}
+
+///-------------ERROR": "Username or Password incorrect"-------------------
+####
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+"username":"batman@dominio.es", "password":"man$Super1"
+}
+
+####
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+"username":"peterparker@dominio.es", "password":"man$Super1"
+}
+
+///-------------new Password-------------------
+####
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+"username":"iron@dominio.es", "password":"man$Super1"
+}
+
+####
+PUT http://localhost:3000/users/newpass
+Content-Type: application/json
+
+{
+"username":"iron@dominio.es", "password":"man$Super1", "newpassword":"man$Super2"
+}
+
+####
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+"username":"iron@dominio.es", "password":"man$Super2"
+}
+
+///-------------delete user-------------------
+####
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+"username":"hulk@dominio.es", "password":"man$Super6"
+}
+
+####
+DELETE http://localhost:3000/users/user
+Content-Type: application/json
+
+{
+"username":"hulk@dominio.es"
+}
+
+///-------------active user-------------------
+####
+PUT http://localhost:3000/users/user
+Content-Type: application/json
+
+{
+"username":"hulk@dominio.es"
+}
+
+####
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+"username":"hulk@dominio.es", "password":"man$Super6"
+}
